@@ -1,11 +1,11 @@
-<nav class="shadow-md bg-base-100 p-4">
+<nav class="shadow-md bg-base-100 py-4 border-b-[1px] border-gray-200">
 
     <div class="px-[10%] mx-auto flex justify-between items-center">
 
         <!-- Logo -->
         <div class="flex items-center flex-shrink-0 hover:opacity-75 mr-6">
             {{-- <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" class="h-[50px] cursor-pointer"> --}}
-            <a href="{{ route('home') }}"><span class="font-semibold text-xl ml-2 mr-6">LOGONAME</span></a>
+            <a href="{{ route('home') }}"><span class="font-semibold text-xl ml-2 mr-6">StageRadar</span></a>
         </div>
 
 
