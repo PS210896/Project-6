@@ -4,13 +4,22 @@ use Illuminate\Support\Facades\Route;
 // Controllers
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InternshipController;
+// use App\Http\Controllers\InternshipController;
+// use App\Http\Controllers\InternshipController;
+// use App\Http\Controllers\InternshipController;
+// use App\Http\Controllers\InternshipController;
+// use App\Http\Controllers\InternshipController;
 
 // Standard Routes
 Route::get('/', [InternshipController::class, 'home'])->name('home');
 
 // Resources
-Route::resource('internships', InternshipController::class);
-
+Route::resource('internships', InternshipController::class); // Asad
+Route::resource('tags', InternshipController::class); // Asad
+Route::resource('company', InternshipController::class); // Rigon
+Route::resource('reviews', InternshipController::class); // Rigon
+Route::resource('users', InternshipController::class); // Appie
+Route::resource('categories', InternshipController::class); // Appie
 
 // Breeze
 Route::get('/dashboard', function () {
