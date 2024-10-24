@@ -4,13 +4,14 @@ use Illuminate\Support\Facades\Route;
 // Controllers
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InternshipController;
+use App\Http\Controllers\TagController;
 
 // Standard Routes
 Route::get('/', [InternshipController::class, 'home'])->name('home');
 
 // Resources
-Route::resource('internships', InternshipController::class);
-
+Route::resource('internships', InternshipController::class); //asad
+Route::resource('tags', TagController::class); //asad
 
 // Breeze
 Route::get('/dashboard', function () {
