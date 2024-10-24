@@ -2,39 +2,30 @@
 
 use Illuminate\Support\Facades\Route;
 // Controllers
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContractController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\InternshipController;
-<<<<<<< HEAD
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TagController;
-=======
-// use App\Http\Controllers\InternshipController;
-// use App\Http\Controllers\InternshipController;
-// use App\Http\Controllers\InternshipController;
-// use App\Http\Controllers\InternshipController;
-// use App\Http\Controllers\InternshipController;
->>>>>>> dd9a19ef659a634796e75593ae9eb87329ec0109
+use App\Http\Controllers\UserController;
+
 
 // Standard Routes
 Route::get('/', [InternshipController::class, 'home'])->name('home');
+Route::get('/account', [InternshipController::class, 'account'])->name('account');
+
 
 // Resources
-<<<<<<< HEAD
 Route::resource('internships', InternshipController::class); //asad
 Route::resource('tags', TagController::class); //asad
-=======
-Route::resource('internships', InternshipController::class); // Asad
-Route::resource('tags', InternshipController::class); // Asad
-Route::resource('company', InternshipController::class); // Rigon
-Route::resource('reviews', InternshipController::class); // Rigon
-Route::resource('users', InternshipController::class); // Appie
-Route::resource('categories', InternshipController::class); // Appie
->>>>>>> dd9a19ef659a634796e75593ae9eb87329ec0109
+Route::resource('users', UserController::class); //rigon
+Route::resource('roles', RoleController::class); //rigon
+Route::resource('companies', CompanyController::class); //appie
+Route::resource('contracts', ContractController::class);  //appie
+
 
 // Breeze
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -42,3 +33,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// Not in use
+// Route::get('/dashboard', function () {
+//     return redirect()->route('home');
+// })->middleware(['auth', 'verified'])->name('dashboard');
