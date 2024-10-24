@@ -2,10 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use Illuminate\Support\Facades\DB;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 use App\Models\Internship;
+use App\Models\Tag;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +19,7 @@ class DatabaseSeeder extends Seeder
         // Checks whether it runs local
         if(env('APP_ENV') == 'local'){
             $this->call([
+                TagSeeder::class,
                 InternshipSeeder::class,
             ]);
 

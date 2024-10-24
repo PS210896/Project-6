@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('spaces_left');
             $table->decimal('compensation', 8, 2)->nullable();
             $table->foreignId('tag_id')->nullable()->constrained('tags');
+            // $table->foreignId('tag_id')->nullable()->constrained('tags');
             $table->timestamps();
         });
     }

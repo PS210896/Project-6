@@ -22,7 +22,7 @@ Route::resource('tags', TagController::class); //asad
 Route::resource('users', UserController::class); //rigon
 Route::resource('roles', RoleController::class); //rigon
 Route::resource('companies', CompanyController::class); //appie
-Route::resource('contracts', ContractController::class);  //appie
+Route::resource('contracts', ContractController::class); //appie
 
 
 // Breeze
