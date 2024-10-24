@@ -18,16 +18,18 @@
                 <label class="label" for="course">
                     <span class="label-text">Cursus</span>
                 </label>
-                <input type="text" name="course" id="course" class="input input-bordered w-full" placeholder="Course" required>
+                <input type="text" name="course" id="course" class="input input-bordered w-full" placeholder=""
+                    required>
             </div>
 
             <div class="flex flex-wrap -mx-2">
                 <div class="w-full md:w-1/2 px-2">
                     <div class="form-control mt-4">
                         <label class="label" for="modal_start_time">
-                            <span class="label-text">Studierichting</span>
+                            <span class="label-text">Leerweg</span>
                         </label>
-                        <input type="text" name="learning_path" id="learning_path" class="input input-bordered w-full" placeholder="Learning_path" required>
+                        <input type="text" name="learning_path" id="learning_path" class="input input-bordered w-full"
+                            placeholder="" required>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 px-2">
@@ -35,7 +37,8 @@
                         <label class="label" for="location">
                             <span class="label-text">Locatie</span>
                         </label>
-                        <input type="text" name="location" id="location" class="input input-bordered w-full" placeholder="Location" required>
+                        <input type="text" name="location" id="location" class="input input-bordered w-full"
+                            placeholder="" required>
                     </div>
                 </div>
             </div>
@@ -44,21 +47,23 @@
                 <label class="label" for="from">
                     <span class="label-text">Van</span>
                 </label>
-                <input type="date" name="from" id="from" class="input input-bordered w-full" placeholder="From" required>
+                <input type="date" name="from" id="from" class="input input-bordered w-full" placeholder=""
+                    required>
             </div>
             <div class="form-control mt-4">
                 <label class="label" for="spaces_left">
                     <span class="label-text">Plekken beschikbaar</span>
                 </label>
-                <input type="text" name="spaces_left" id="spaces_left" class="input input-bordered w-full" placeholder="Spaces_left">
+                <input type="text" name="spaces_left" id="spaces_left" class="input input-bordered w-full"
+                    placeholder="">
             </div>
             <div class="form-control mt-4">
                 <label class="label" for="compensation">
                     <span class="label-text">Stagevergoeding</span>
                 </label>
-                <input type="text" name="compensation" id="compensation" class="input input-bordered w-full" placeholder="Compensation" required>
+                <input type="text" name="compensation" id="compensation" class="input input-bordered w-full"
+                    placeholder="" required>
             </div>
-
 
             <button type="submit" class="btn btn-success mt-6 w-full">Aanmaken</button>
 
