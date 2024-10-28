@@ -4,13 +4,16 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
     ],
     theme: {
         extend: {},
     },
     plugins: [require("daisyui")],
-    // Add the daisyui configuration here
+    // Configure dark mode to be class-based instead of auto
+    darkMode: 'class', // Add this line to control dark mode via a class
+    // DaisyUI configuration
     daisyui: {
-        themes: ["light", "dark", "pastel"],
+        themes: ["fantasy"],
     },
-  }
+}

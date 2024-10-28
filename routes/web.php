@@ -35,6 +35,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 // Not in use
-// Route::get('/dashboard', function () {
-//     return redirect()->route('home');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return redirect()->route('home');
+})->middleware(['auth', 'verified'])->name('dashboard');

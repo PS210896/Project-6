@@ -32,12 +32,7 @@ class TagController extends Controller
     {
         // Validate the incoming request data
         $request->validate([
-            'course' => 'required|string|max:255',
-            'learning_path' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
-            'from' => 'required|date',
-            'spaces_left' => 'required|nullable|integer',
-            'compensation' => 'nullable|decimal:8,2',
+            'name' => 'required|string|max:255',
         ]);
 
         // Create a new tag
@@ -78,12 +73,7 @@ class TagController extends Controller
     {
         // Validate the incoming request data
         $request->validate([
-            'course' => 'required|string|max:255',
-            'learning_path' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
-            'from' => 'required|date',
-            'spaces_left' => 'required|nullable|integer',
-            'compensation' => 'nullable|decimal:8,2',
+            'name' => 'required|string|max:255',
         ]);
 
         // Find the tag by ID and update its details

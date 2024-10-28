@@ -13,7 +13,7 @@ class InternshipController extends Controller
     public function home()
     {
         $internships = Internship::orderBy('created_at', 'desc')->take(4)->get();
-        // $internships = Internship::paginate(3); // 8 internships per page
+        // $internships = Internship::paginate(3); // 10 internships per page
 
         // Return a view with internships data
         return view('index', ['internships' => $internships]);
@@ -45,12 +45,14 @@ class InternshipController extends Controller
         // Validate the incoming request data
         $request->validate([
             'course' => 'required|string|max:255',
+            'image_url' => 'required|string|max:255',
             'learning_path' => 'required|string|max:255',
             'location' => 'required|string|max:255',
             'from' => 'required|date',
             'spaces_left' => 'required|nullable|integer',
             'compensation' => 'nullable|decimal:8,2',
         ]);
+
 
         // Create a new internship
         Internship::create($request->all());
@@ -91,11 +93,12 @@ class InternshipController extends Controller
         // Validate the incoming request data
         $request->validate([
             'course' => 'required|string|max:255',
+            'image_url' => 'required|string|max:255',
             'learning_path' => 'required|string|max:255',
             'location' => 'required|string|max:255',
             'from' => 'required|date',
             'spaces_left' => 'required|nullable|integer',
-            'compensation' => 'nullable|decimal:8,2',
+            'compensation' => 'nullable',
         ]);
 
         // Find the internship by ID and update its details

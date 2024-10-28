@@ -2,7 +2,7 @@
 
         <div class="flex-1">
             {{-- <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" class="h-[50px] cursor-pointer"> --}}
-            <a href="{{ route('home') }}"><span class="font-semibold text-xl ml-2 mr-6">StageRadar</span></a>
+            <a href="{{ route('home') }}"><span class="ml-2 mr-6 text-xl font-semibold">StageRadar</span></a>
         </div>
 
 
@@ -13,43 +13,84 @@
                 {{ request()->routeIs('home') ? 'text-primary' : 'hover:opacity-75' }}">
                     Home
                 </a>
-                <a href="{{ route('internships.index') }}"
-                    class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
-                    {{ request()->routeIs('internships.*') ? 'text-primary' : 'hover:opacity-75' }}">
-                    Internships
-                </a>
-                {{-- <a href="{{ route('about') }}"
-                    class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
-                {{ request()->routeIs('about') ? 'text-primary' : 'hover:opacity-75' }}">
-                    About
-                </a>
-                <a href="{{ route('contact') }}"
-                    class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
-                {{ request()->routeIs('contact') ? 'text-primary' : 'hover:opacity-75' }}">
-                    Contact
-                </a> --}}
-            </div>
 
-        </div>
-
-
-    <div class="flex-none ml-6">
-        <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-                <div class="w-10 rounded-full">
-                    <img alt="Tailwind CSS Navbar component"
-                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                </div>
-            </div>
-            <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                <li>
-                    <a class="justify-between">
-                        Profile
-                        <span class="badge">New</span>
+                @if (Auth::check() && Auth::user())
+                    <a href="{{ route('internships.index') }}"
+                        class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
+                        {{ request()->routeIs('internships.*') ? 'text-primary' : 'hover:opacity-75' }}">
+                        Stages
                     </a>
-                </li>
-                <li><a>Logout</a></li>
-            </ul>
-        </div>
-    </div>
+                @endif
+
+
+                {{-- Displays if logged in --}}
+
+                {{-- If it has the admin ID --}}
+                {{-- Alternative if routes are implemented @if (Auth::check() && Auth::user()->role_id == "teacher"--}}
+                @if (Auth::check() && Auth::user()->id == 1)
+                    <div class="mr-4 dropdown dropdown-hover">
+                        <div tabindex="0" role="button" class="m-1">Admin</div>
+                        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <li>
+                            <a href="{{ route('tags.index') }}"
+                                class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
+                                {{ request()->routeIs('tags.*') ? 'text-primary' : 'hover:opacity-75' }}">
+                                Labels
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('users.index') }}"
+                                class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
+                                {{ request()->routeIs('users.*') ? 'text-primary' : 'hover:opacity-75' }}">
+                                Gebruikers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('companies.index') }}"
+                                class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
+                                {{ request()->routeIs('companies.*') ? 'text-primary' : 'hover:opacity-75' }}">
+                                Bedrijven
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('roles.index') }}"
+                                class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
+                                {{ request()->routeIs('roles.*') ? 'text-primary' : 'hover:opacity-75' }}">
+                                Rollen
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('contracts.index') }}"
+                                class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
+                                {{ request()->routeIs('contracts.*') ? 'text-primary' : 'hover:opacity-75' }}">
+                                Contracten
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            @endif
+
+
+        {{-- If not logged in --}}
+        @if (!Auth::check())
+            <a href="{{ route('login') }}" class="mr-4 btn btn-primary">
+                <button>
+                    Login
+                </button>
+            </a>
+        @endif
+
+        {{-- If logged in --}}
+        @if (Auth::check() && Auth::user())
+        <form class="mr-4 btn btn-primary" action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit">
+                Logout
+            </button>
+        </form>
+    @endif
 </nav>

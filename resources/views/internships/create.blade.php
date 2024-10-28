@@ -14,58 +14,66 @@
 
             @csrf
 
-            <div class="form-control mt-4">
+            <div class="mt-4 form-control">
                 <label class="label" for="course">
                     <span class="label-text">Cursus</span>
                 </label>
-                <input type="text" name="course" id="course" class="input input-bordered w-full" placeholder=""
+                <input type="text" name="course" id="course" class="w-full input input-bordered" placeholder=""
+                    required>
+            </div>
+
+            <div class="mt-4 form-control">
+                <label class="label" for="image_url">
+                    <span class="label-text">Afbeelding URL</span>
+                </label>
+                <input type="text" name="image_url" id="image_url" class="w-full input input-bordered" placeholder=""
                     required>
             </div>
 
             <div class="flex flex-wrap -mx-2">
-                <div class="w-full md:w-1/2 px-2">
-                    <div class="form-control mt-4">
-                        <label class="label" for="modal_start_time">
+                <div class="w-full px-2 md:w-1/2">
+                    <div class="mt-4 form-control">
+                        <label class="label" for="learning_path">
                             <span class="label-text">Leerweg</span>
                         </label>
-                        <input type="text" name="learning_path" id="learning_path" class="input input-bordered w-full"
+                        <input type="text" name="learning_path" id="learning_path" class="w-full input input-bordered"
                             placeholder="" required>
                     </div>
                 </div>
-                <div class="w-full md:w-1/2 px-2">
-                    <div class="form-control mt-4">
+                <div class="w-full px-2 md:w-1/2">
+                    <div class="mt-4 form-control">
                         <label class="label" for="location">
                             <span class="label-text">Locatie</span>
                         </label>
-                        <input type="text" name="location" id="location" class="input input-bordered w-full"
+                        <input type="text" name="location" id="location" class="w-full input input-bordered"
                             placeholder="" required>
                     </div>
                 </div>
             </div>
 
-            <div class="form-control mt-4">
+            <div class="mt-4 form-control">
                 <label class="label" for="from">
                     <span class="label-text">Van</span>
                 </label>
-                <input type="date" name="from" id="from" class="input input-bordered w-full" placeholder=""
+                <input type="date" name="from" id="from" class="w-full input input-bordered" placeholder=""
                     required>
             </div>
-            <div class="form-control mt-4">
+            <div class="mt-4 form-control">
                 <label class="label" for="spaces_left">
                     <span class="label-text">Plekken beschikbaar</span>
                 </label>
-                <input type="text" name="spaces_left" id="spaces_left" class="input input-bordered w-full"
+                <input type="text" name="spaces_left" id="spaces_left" class="w-full input input-bordered"
                     placeholder="">
             </div>
-            <div class="form-control mt-4">
+            <div class="mt-4 form-control">
                 <label class="label" for="compensation">
                     <span class="label-text">Stagevergoeding</span>
                 </label>
-                <input type="text" name="compensation" id="compensation" class="input input-bordered w-full"
-                    placeholder="" required>
+                <input type="text" name="compensation" id="compensation" class="w-full input input-bordered"
+                    placeholder="0.00">
             </div>
 
-            <button type="submit" class="btn btn-success mt-6 w-full">Aanmaken</button>
+            <button type="submit" class="w-full mt-6 btn btn-success">Aanmaken</button>
 
         </form>
     </section>
