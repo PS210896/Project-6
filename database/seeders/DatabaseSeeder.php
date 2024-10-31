@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             $this->call([
                 TagSeeder::class,
                 InternshipSeeder::class,
+                CompanySeeder::class,
+                ContractSeeder::class,
             ]);
 
             User::factory()->create([
