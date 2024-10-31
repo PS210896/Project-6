@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         if(env('APP_ENV') == 'local'){
             $this->call([
                 InternshipSeeder::class,
+                CompanySeeder::class,
+                ContractSeeder::class,
             ]);
 
             User::factory()->create([
